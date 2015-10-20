@@ -140,11 +140,19 @@ a {
   justify-content: space-around;
   padding: 10px;
 }
-
+.skill-flex-box{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .center-content {
   padding: 2.5% 5%;
 }
-
+.left-content{
+  padding: 10px 0;
+}
 ul {
   list-style-type: none;
 }
