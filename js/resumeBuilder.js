@@ -8,13 +8,23 @@ var bio = {
         mobile: '541-602-8097',
         email: 'zth198814@gmail.com',
         github: 'https://github.com/tianhengzhou',
-        location: 'Sunnyvale'
+        location: 'Sunnyvale',
+        blogUrl: 'www.tianhengzhou.com'
     },
     welcomeMessage: 'Tianheng Zhou Web Developer',
     skills: ['HTML','CSS','NodeJs','AngularJs','ExpressJs','MongoDB','JavaScript'],
-    biopic: url,
+    biopic: '',
     display: function(){
-
+        var formatheaderName = HTMLheaderName.replace('%data%', bio.name),
+            formatheaderrole = HTMLheaderRole.replace('%data%', bio.role),
+            formatmobile = HTMLmobile.replace('%data%', bio.contacts.mobile),
+            formatemail = HTMLemail.replace('%data%', bio.contacts.email),
+            formatgithub = HTMLgithub.replace('%data%', bio.contacts.github),
+            formatblog = HTMLblog.replace('%data%', bio.contacts.blogUrl),
+            formatlocation = HTMLlocation.replace('%data%', bio.contacts.location);
+        $('#header').prepend(formatheaderrole).prepend(formatheaderName);
+        $('#topContacts').append(formatmobile).append(formatemail).append(formatgithub).append(formatblog).append(formatlocation);
+        $('#footerContacts').append(formatmobile).append(formatemail).append(formatgithub).append(formatblog).append(formatlocation)
     }
 };
 
@@ -37,6 +47,7 @@ var education = {
         }
     ],
     display: function(){
+
 
     }
 };
@@ -80,8 +91,7 @@ var projects = {
 
     }
 };
-
-
-$(document).ready(function(){
-
-});
+bio.display();
+education.display();
+work.display();
+projects.display();
